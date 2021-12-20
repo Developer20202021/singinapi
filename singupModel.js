@@ -5,9 +5,9 @@ const SingUpSchema = require("./SingupSchema");
 
 
 
-const SingUpModel = mongoose.model('user', SingUpSchema);
+const SingupModel = mongoose.model('user', SingUpSchema);
 
 
 
 
-module.exports = SingUpModel;
+module.exports = SingupModel;

@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require("mongoose");
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const SingUpModel = require('./SingUpModel');
+const SingupModel = require('./singupModel');
 
 
 
@@ -128,7 +128,7 @@ app.post('/sing-up',userExitCheck,validEmail, async(req, res)=>{
             }
 
 
-            const userSave =  SingUpModel(newUserInfo);
+            const userSave =  SingupModel(newUserInfo);
 
             userSave.save((err)=>{
                 if (err) {
@@ -196,7 +196,7 @@ app.post("/login", async(req, res)=>{
 
  try {
 
-    const findUser = await SingUpModel.find({email:email});
+    const findUser = await SingupModel.find({email:email});
 
     if (findUser.length>0) {
 
