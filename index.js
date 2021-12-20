@@ -100,7 +100,7 @@ const validEmail = async(req, res, next)=>{
 
 
 
-app.post('/sing-up',userExitCheck,validEmail, async(req, res)=>{
+app.post('/singup',userExitCheck,validEmail, async(req, res)=>{
 
 
     try {
@@ -190,7 +190,7 @@ app.get('/', (req, res)=>{
 
 
 
-app.post("/login", async(req, res)=>{
+app.post("/singin", async(req, res)=>{
 
  const {email, password} = req.body;
 
