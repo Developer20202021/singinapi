@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}))
 
-const PORT = process.env.PORT||5000;
+let PORT = process.env.PORT||5000;
 
 
 const privateKey = process.env.Private_Key;
