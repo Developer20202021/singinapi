@@ -50,7 +50,7 @@ const userExitCheck = async (req, res, next)=>{
 
     console.log(userInfo);
 
-    const getUserEmail = await SingUpModel.find({email:userInfo?.email})
+    const getUserEmail = await SingupModel.find({email:userInfo?.email})
 
     if (getUserEmail.length>0) {
         res.status(409).json({msg:"User already exist!!!"})
@@ -210,7 +210,7 @@ app.post("/login", async(req, res)=>{
 
                 const createUserName = findUser?.firstName+findUser?.email
 
-               let tocken =  jwt.sign(createUserName,privateKey)
+               let tocken = jwt.sign(createUserName,privateKey)
             
 
                 res.cookie('tocken',tocken, { expires: new Date(Date.now() + 900000), httpOnly: true })
